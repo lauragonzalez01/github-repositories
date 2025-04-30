@@ -5,6 +5,7 @@ Angular web app for searching and viewing public GitHub repositories. Allows you
 ## Execution
 
 1. Open the **terminal** in the project folder.
+2. Run: `npm i`
 2. Run: `npm start` (it will open in `http://localhost:4200`).
 
 ## Requirements
