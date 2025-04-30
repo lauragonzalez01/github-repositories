@@ -1,0 +1,23 @@
+<div class="home-container">
+    <div class="login-card">
+        <h1>Repositorios GitHub</h1>
+        <div class="login-options">
+            <button mat-button (click)="continueAsDeveloper()">
+                Ingresar como Desarrollador
+            </button>
+            <button mat-button (click)="showAsGuest()">
+                Ingresar con tu usuario de GitHub
+            </button>
+            <div *ngIf="showGuestInput" class="guest-input">
+                <div class="separator"></div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario de GitHub</mat-label>
+                    <input matInput [(ngModel)]="guestUsername">
+                    <mat-error *ngIf="showError">Por favor, ingresa un nombre de usuario.</mat-error>
+                </mat-form-field>
+                <button mat-button (click)="continueAsGuest()" class="color-blue">Continuar</button>
+            </div>
+            <app-error-handler [errorMessage]="errorMessage"></app-error-handler>
+        </div>
+    </div>
+</div>

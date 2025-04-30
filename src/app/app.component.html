@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+    <img src="../assets/icons/github.png" alt="GitHub Logo" />
+    <span class="spacer"></span>
+    <button *ngIf="router.url !== '/'" mat-button color="warn" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon> Volver
+    </button>
+</mat-toolbar>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

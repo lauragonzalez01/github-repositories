@@ -1,0 +1,83 @@
+.home-container {
+    background-color: hsl(216, 28%, 7%);
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-card {
+    background-color: #f6f8fa;
+    color: #24292f;
+    border-radius: 10px;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 350px;
+    height: auto;
+    max-height: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #24292f;
+    text-align: center;
+}
+
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.login-options button {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid hsl(216, 28%, 7%);
+    border-radius: 10px;
+    padding: 8px 24px;
+    color: hsl(216, 28%, 7%);
+}
+
+.login-options .separator {
+    border-bottom: 1px gray solid;
+    width: 100%;
+    margin: -3% 0% 5% 0%;
+}
+
+.color-blue {
+    background-color: #1a73e8;
+    border: 1px solid #1a73e8 !important;
+    color: white !important;
+}
+
+.guest-input {
+    margin-top: 16px;
+    width: 100%;
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .guest-input button {
+        width: 100%;
+        max-width: 300px;
+        color: hsl(216, 28%, 7%);
+        border-radius: 10px;
+        padding: 8px 24px;
+    }
+}
