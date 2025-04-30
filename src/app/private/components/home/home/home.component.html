@@ -13,8 +13,8 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Usuario de GitHub</mat-label>
                     <input matInput [(ngModel)]="guestUsername">
-                    <mat-error *ngIf="showError">Por favor, ingresa un nombre de usuario.</mat-error>
                 </mat-form-field>
+                <mat-error class="error" *ngIf="showError">Por favor, ingresa un nombre de usuario.</mat-error>
                 <button mat-button (click)="continueAsGuest()" class="color-blue">Continuar</button>
             </div>
             <app-error-handler [errorMessage]="errorMessage"></app-error-handler>

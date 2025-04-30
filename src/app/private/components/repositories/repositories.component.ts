@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'; 
+import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -6,7 +6,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { NgIf, NgFor } from '@angular/common';
 import { githubRepositories } from '../../../shared/models/github-repositories.model';
 import { GithubService } from '../../../shared/services/github/github.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -23,9 +23,9 @@ import { ErrorHandlerComponent } from '../../../shared/components/error-handler/
 })
 export class RepositoriesComponent implements OnInit {
 
-  repositories: githubRepositories[] = []; 
+  repositories: githubRepositories[] = [];
   loading: boolean = false;
-  username: any;
+  username: any = '';
   totalRepositories: number = 0;
   pageSize: number = 10;
   pageIndex: number = 0;
@@ -36,10 +36,11 @@ export class RepositoriesComponent implements OnInit {
   starFilter: number | null = null;
   errorMessage: string = '';
 
-  constructor(private githubService: GithubService, private router: Router) { }
+  constructor(private githubService: GithubService, private router: Router, private route: ActivatedRoute) {
+    this.username = this.route.snapshot.paramMap.get('username');
+  }
 
   ngOnInit(): void {
-    this.username = localStorage.getItem("username");
     this.loadRepositories(this.username);
   }
 

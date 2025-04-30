@@ -48,10 +48,9 @@ export class HomeComponent {
   }
 
   loadAndNavigate(username: string): void {
-    this.githubService.getPublicRepositories(username).pipe(
-      tap((repos) => {
+    this.githubService.getPublicRepositories(username).pipe(tap((repos) => {
         if (repos) {
-          this.router.navigate(['/repositorios']);
+          this.router.navigate(['/', username, 'repositorios']);
         }
       }),
       catchError((error) => {

@@ -4,6 +4,6 @@ import { RepositoriesComponent } from './private/components/repositories/reposit
 
 export const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' }, 
-    { path: 'repositorios', component: RepositoriesComponent }, 
+    { path: ':username/repositorios', component: RepositoriesComponent }, 
     { path: '**', redirectTo: '', pathMatch: 'full' }, 
 ];

@@ -20,9 +20,6 @@ export class GithubService {
   }
 
   getPublicRepositories(username: string): Observable<githubRepositories[]> {
-    if (!username || username.trim() === '') {
-      return of([]);
-    }
     const url = `https://api.github.com/users/${username}/repos`;
     return this.http.get<githubRepositories[]>(url).pipe(
       catchError((error) => this.handleError.handleHttpError(error, username)));
